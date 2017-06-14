@@ -1,13 +1,19 @@
 var mongo = require('mongodb').MongoClient;
-client = require('socket.io').listen(8080).sockets;
+var client = require('socket.io').listen(8080).sockets;
 
+// client.configure(function () { 
+//       client.set("transports", ["xhr-polling"]); 
+//       client.set("polling duration", 10); 
+//     });
 
 mongo.connect('mongodb://127.0.0.1/chat', function(err,db){
+  console.log("we are connected");
   if(err){
+     console.log(fatgya);
     throw err;
+   
   }
-});
-client.on('connection',function(socket){
+  client.on('connection',function(socket){
   var col = db.collection('messages'),
   sendStatus= function(s){
     socket.emit('status',s);
@@ -34,3 +40,5 @@ client.on('connection',function(socket){
     });
   });
 });
+});
+

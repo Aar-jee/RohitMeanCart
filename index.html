@@ -3,7 +3,7 @@
 
 <head>
   <title>Chat</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -64,13 +64,13 @@
           }
         });
         textarea.addEventListener('keydown', function(event){
-          var self = this,
-          name = chatName.value;
+          var self = this;
+          var name = chatName.value;
           
           if(event.which===13 && event.shiftKey===false){
             socket.emit('input',{
               name: name,
-              message: self.value;
+              message: self.value
             });
             event.preventDefault();
           }
