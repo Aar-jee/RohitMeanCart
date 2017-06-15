@@ -11,7 +11,7 @@
   <input type="text" class="chat-name" placeholder="enter your name">
   <div class="chat-messages" style="border: 1px solid #bbb; width: 200px;height: 300px;overflow-y: scroll;" >
   </div>
-  <textarea class="chat-textarea" placeholder="type your message"></textarea>
+  <input class="chat-textarea" placeholder="type your message"></input>
   <div class="chat-status"> Status:<span>Idle</span></div>
 </div>
   <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
@@ -80,7 +80,7 @@
           var self = this;
           var name = chatName.value;
           
-          if(event.which===13 && /Android/.test(navigator.userAgent){
+          if(event.which===13 && event.shiftKey===false){
             socket.emit('input',{
               name: name,
               message: self.value
