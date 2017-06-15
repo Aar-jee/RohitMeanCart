@@ -80,7 +80,7 @@
           var self = this;
           var name = chatName.value;
           
-          if(event.which===13){
+          if(event.which===13 && event.shiftKey===false){
             socket.emit('input',{
               name: name,
               message: self.value
