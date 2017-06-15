@@ -7,8 +7,8 @@ const INDEX = path.join(__dirname, 'index.html');
 
 var mongo = require('mongodb').MongoClient,
     client = require('socket.io').listen(8080).sockets;
-//var uri = "mongodb://rohitghai91:mongodb1@conmanmongoproj-shard-00-00-tddt5.mongodb.net:27017,conmanmongoproj-shard-00-01-tddt5.mongodb.net:27017,conmanmongoproj-shard-00-02-tddt5.mongodb.net:27017/mittens?ssl=true&replicaSet=ConmanMongoProj-shard-0&authSource=admin";
-var uri= "mongodb://127.0.0.1/mittens"
+var uri = "mongodb://rohitghai91:mongodb1@conmanmongoproj-shard-00-00-tddt5.mongodb.net:27017,conmanmongoproj-shard-00-01-tddt5.mongodb.net:27017,conmanmongoproj-shard-00-02-tddt5.mongodb.net:27017/mittens?ssl=true&replicaSet=ConmanMongoProj-shard-0&authSource=admin";
+//var uri= "mongodb://127.0.0.1/mittens"
 mongo.connect(uri, function(err,db){
  if(err){
 console.log(fatgya);
